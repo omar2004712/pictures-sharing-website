@@ -6,7 +6,7 @@ module.exports = ({ posts }) => {
       return `<div class="comment">${comment}</div>`
     }).join('');
     return `
-      <div class="post" id="${post.id}">
+      <div class="grid-2 Post" id="${post.id}">
       <img src="data:image/png;base64, ${post.image}" class="post-image"/>        <div class="like-comment-area">
           <div class="likes-comments-counters">
             <label for="like-button-checkbox">
@@ -24,7 +24,7 @@ module.exports = ({ posts }) => {
             new comment
           </button>
         </div>
-        <form class="add-new-comment" method="POST" action="/newComment">
+        <form class="add-new-comment hidden" method="POST" action="/newComment">
           <input type="text" placeholder="add new comment" class="new-comment-input" name="comment"/>
           <button class="share-comment-button">Share</button>
         </form>
@@ -47,6 +47,8 @@ module.exports = ({ posts }) => {
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="helpers.js"></script>
+    <script src="addNewComment.js"></script>
     <script src="commentsSection.js"></script>
     <script src="likeBtn.js"></script>
     <script src="index.js"></script>

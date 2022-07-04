@@ -1,8 +1,5 @@
-const posts = Array.from(document.querySelectorAll('.post')).map( post => {
+Array.from(document.querySelectorAll('.Post')).forEach( post => {
   likeButtonFunctionality(post)
   commentsSectionFunctionality(post)
-  return {
-    likeButton: post.querySelector('.likeButton'),
-
-  }
+  addNewCommentFunctionality(post)
 })

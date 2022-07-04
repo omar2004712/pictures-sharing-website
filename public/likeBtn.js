@@ -26,7 +26,7 @@ const likeButtonFunctionality = post => {
       url,
       method: 'post',
       data: JSON.stringify({
-        liked: likeButton.style.color === "black",
+        liked: !likeButtonCheckbox.checked,
       })
     })
   })

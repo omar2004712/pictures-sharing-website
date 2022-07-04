@@ -4,6 +4,7 @@ const commentsSectionFunctionality = post => {
   commentButton.addEventListener('click', () => {
     commentButton.classList.toggle('white');
     commentButton.classList.toggle('black');
-    commentsContainer.classList.toggle('hidden')  
+    commentsContainer.classList.toggle('hidden');
+    determinePostClass(post);
   })
 }

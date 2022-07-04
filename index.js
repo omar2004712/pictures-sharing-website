@@ -55,7 +55,7 @@ upload.single('post-image')
 
 app.post('/like/:id', async  (req, res) => {
   const post = await postsRepo.getOne(req.params.id);
-  
+  console.log(req.body)
   await postsRepo.update(req.params.id, {
     likesCount: req.body.liked ? post.likesCount + 1:post.likesCount - 1
   })
