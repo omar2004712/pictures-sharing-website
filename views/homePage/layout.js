@@ -4,7 +4,8 @@ module.exports = ({content}) => {
     <html>
       <head>
         <link rel="stylesheet" href="main.css" />
-      </head>
+        <script src="https://kit.fontawesome.com/7ecb8aa263.js" crossorigin="anonymous"></script>
+        </head>
       <body>
         <div class="nav-bar">
           Pictures

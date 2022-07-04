@@ -12,3 +12,127 @@ body{
   font-family: monospace;
   font-size: 32px;
 }
+.root{
+  margin-top: 62px;
+  display: grid;
+  grid-template-rows: 40px 1fr;
+  row-gap: 20px;
+}
+.new-post-container{
+  width: fit-content;
+  margin: auto;
+}
+.add-new-post{
+  border: 2px solid rgb(187, 187, 187);
+  font-size: 32px;
+  padding: 2px 4px 2px 4px;
+  color: rgb(187, 187, 187);
+  border-radius: 20px;
+  transition: all 200ms;
+}
+.add-new-post:hover{
+  color: rgb(117, 117, 117);
+  border: 2px solid rgb(117, 117, 117);
+}
+.posts-container{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+.post{
+  display: grid;
+  grid-template-rows: 400px 30px 40px 100px;
+  row-gap: 10px;
+}
+.grid-3{
+  display: grid;
+  grid-template-rows: 400px 30px 100px;
+  row-gap: 10px;
+}
+.post-image{
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.like-comment-area{
+  display: grid;
+  grid-template-columns: 1fr 100px;
+}
+.likes-comments-counters{
+  display: grid;
+  grid-template-columns: 24px 75px 24px 1fr;
+  column-gap: 7px;
+}
+.like-button,
+.comment-button{
+  font-size: 20px;
+  color: white;
+  -webkit-text-stroke:2px black;
+  transform: scaleX(-1);
+  cursor: pointer;
+  transition: color 200ms;
+}
+.likes-count,
+.comments-count{
+  font-size: 16px;
+  vertical-align: middle;
+  font-family: monospace;
+  word-spacing: -5px;
+}
+#like-button-checkbox,
+#comment-button-checkbox{
+  display: none;
+}
+.add-new-comment{
+  display: grid;
+  grid-template-columns: 330px 50px;
+  column-gap: 20px;
+}
+.new-comment-input{
+  font-size: 16px;
+  font-family: monospace;
+  padding: 8px 8px 4px 8px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 2px rgb(204, 204, 204) solid;
+  transition: all 200ms;
+}
+.share-comment-button,
+.new-comment-button{
+  height: 30px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.share-comment-button{
+  margin-top: 10px;
+}
+.new-comment-input:focus{
+  border-bottom: 2px black solid;
+}
+.comments-container::-webkit-scrollbar{
+  display: none;
+}
+.comments-container{
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(243, 243, 243);
+}
+.comment{
+  font-size: 16px;
+  font-family: monospace;
+  padding: 8px 8px 8px 8px;
+  color: rgb(95, 95, 95);
+  word-wrap: break-word;
+  font-weight: 600;
+  border-bottom: 1px rgb(204, 204, 204) solid;
+}
+.hidden{
+  display: none;
+}
