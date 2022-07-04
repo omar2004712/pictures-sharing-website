@@ -11,12 +11,12 @@ module.exports = ({ posts }) => {
           <div class="likes-comments-counters">
             <label for="like-button-checkbox">
               <input type="checkbox" id="like-button-checkbox">
-              <i class="fa-solid fa-heart like-button"></i>
+              <i class="fa-solid fa-heart like-button white"></i>
             </label>
             <span class="likes-count">${post.likesCount} likes</span>
             <label for="comment-button-checkbox">
               <input type="checkbox" id="comment-button-checkbox">
-              <i class="fa-solid fa-comment comment-button"></i>
+              <i class="fa-solid fa-comment comment-button white"></i>
             </label>
             <span class="comments-count">${post.commentsCount} comments</span>
           </div>
@@ -47,6 +47,8 @@ module.exports = ({ posts }) => {
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="commentsSection.js"></script>
+    <script src="likeBtn.js"></script>
     <script src="index.js"></script>
     `
   })
