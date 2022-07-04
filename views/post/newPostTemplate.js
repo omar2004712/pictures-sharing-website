@@ -1,7 +1,7 @@
 const layout = require('../layout');
 
 module.exports = () => {
-  const result =  layout({
+  return layout({
     content: `<div>
                 <form class="new-post-container" method="POST" enctype="multipart/form-data">
                   <label for="post-image">
@@ -14,6 +14,4 @@ module.exports = () => {
               </div>
             `
   })
-  console.log('result: ', result);
-  return result
 }
