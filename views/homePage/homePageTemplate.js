@@ -1,4 +1,4 @@
-const layout = require("./layout")
+const layout = require("../layout")
 
 module.exports = ({ posts }) => {
   const postsTemplate = posts.map( post => {
@@ -7,10 +7,11 @@ module.exports = ({ posts }) => {
     }).join('');
     return `
       <div class="grid-2 Post" id="${post.id}">
-      <img src="data:image/png;base64, ${post.image}" class="post-image"/>        <div class="like-comment-area">
+      <img src="data:image/png;base64, ${post.image}" class="post-image"/>        
+      <div class="like-comment-area">
           <div class="likes-comments-counters">
-            <label for="like-button-checkbox">
-              <input type="checkbox" id="like-button-checkbox">
+            <label for="like-button-checkbox-${post.id}">
+              <input type="checkbox" id="like-button-checkbox-${post.id}" class="like-button-checkbox">
               <i class="fa-solid fa-heart like-button white"></i>
             </label>
             <span class="likes-count">${post.likesCount} likes</span>
@@ -37,8 +38,8 @@ module.exports = ({ posts }) => {
   return layout({
     content: `
     <div class="root">
-      <div class="new-post-container">
-        <a href='/new-post' target="_blank">
+      <div class="new-post-container-button">
+        <a href='/new-post'>
           <i class="fa-solid fa-plus add-new-post"></i>
         </a>
       </div>

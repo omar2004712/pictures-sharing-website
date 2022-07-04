@@ -8,7 +8,7 @@ module.exports = ({content}) => {
         </head>
       <body>
         <div class="nav-bar">
-          Pictures
+          <a href="/">Pictures</a>
         </div>
         ${content}
       </body>

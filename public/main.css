@@ -13,16 +13,21 @@ body{
   font-size: 32px;
   z-index: 100;
 }
+.nav-bar a{
+  color: white;
+  text-decoration: none;
+}
 .root{
   margin-top: 62px;
   display: grid;
   grid-template-rows: 40px 1fr;
   row-gap: 20px;
 }
-.new-post-container{
+.new-post-container-button{
   width: fit-content;
   margin: auto;
 }
+
 .add-new-post{
   border: 2px solid rgb(187, 187, 187);
   font-size: 32px;
@@ -107,7 +112,7 @@ body{
   font-family: monospace;
   word-spacing: -5px;
 }
-#like-button-checkbox,
+.like-button-checkbox,
 #comment-button-checkbox{
   display: none;
 }
@@ -160,4 +165,51 @@ body{
 }
 .hidden{
   display: none;
+}
+
+.new-post-container{
+  margin-top: 62px;
+  display: grid;
+  grid-template-rows: 80px 45px;
+  position: relative;
+  top: 200px;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: fit-content;
+  margin: auto;
+}
+
+#post-image{
+  display: none;
+}
+
+.upload-text{
+  font-family: monospace;
+  font-size: 20px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.image-icon{
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.post-button{
+  font-family: monospace;
+  font-size: 20px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.post-button:hover{
+  background-color: rgb(236, 236, 236);
+}
+
+.post-button:active{
+  font-size: 16px;
 }
