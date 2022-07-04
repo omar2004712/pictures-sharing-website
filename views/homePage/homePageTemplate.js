@@ -24,7 +24,7 @@ module.exports = ({ posts }) => {
             new comment
           </button>
         </div>
-        <form class="add-new-comment hidden" method="POST" action="/newComment">
+        <form class="add-new-comment hidden">
           <input type="text" placeholder="add new comment" class="new-comment-input" name="comment"/>
           <button class="share-comment-button">Share</button>
         </form>
