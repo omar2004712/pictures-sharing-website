@@ -337,3 +337,7 @@ body{
   text-decoration: underline;
 }
 
+.error{
+  font-family: monospace;
+  color: red;
+}

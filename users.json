@@ -4,5 +4,11 @@
     "email": "testing@testing.com",
     "password": "d1f46fb06a093fe14a9c681a1291387118aa06e00928225802b00d5ca070a1f18098e1634d0356996779cacd0efc7fa56a6e1a5cb9cc59e93c0931c0536b6025.c7c0aa2e",
     "id": "8f951bef"
+  },
+  {
+    "email": "example@example.com",
+    "username": "example",
+    "password": "c2bb8d8f545afd3b24494cc36b6850d5254be90c08439b556720ffd1bef2239d3f12a67942b9e7398d6d5d6cc04428978f3388aa25cfb8c296e3f7d8f1e18094.7e28485f",
+    "id": "ce344be7"
   }
 ]

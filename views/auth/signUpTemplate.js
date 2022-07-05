@@ -8,12 +8,12 @@ module.exports = ({ errors }) => {
       <h1>Sign Up</h1>
       <form method="POST" class="sign-up-form">
         <input required class="signup-input" placeholder="username" name="username" />                
-        <label>${getError(errors, 'username')}</label>
+        <label class="error">${getError(errors, 'username')}</label>
         <input required class="signup-input" placeholder="email" name="email" />                      
-        <label>${getError(errors, 'email')}</label>
-        <input required class="password-input" placeholder="password" name="password" />                
-        <label>${getError(errors, 'password')}</label>
-        <input required class="password-input" placeholder="confirm password" name="confirmPassword" />
+        <label class="error">${getError(errors, 'email')}</label>
+        <input required type="password" class="password-input" placeholder="password" name="password" />                
+        <label class="error">${getError(errors, 'password')}</label>
+        <input required type="password" class="password-input" placeholder="confirm password" name="confirmPassword" />
         <label>${getError(errors, 'confirmPassword')}</label>
         <button class="sign-up-button">Sign Up</button>
       </form>
