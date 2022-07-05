@@ -12,6 +12,7 @@ module.exports = () => {
                   <button class="post-button">Post</button>
                 </form>
               </div>
-            `
+            `,
+    title: 'Pictures - New Post'
   })
 }
