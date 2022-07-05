@@ -22,11 +22,11 @@ router.post('/signup',[
 ],
 handleErrors(signUpTemplate),
 async (req, res) => {
-  req.session.userId = await usersRepo.create({
+  req.session.userId = (await usersRepo.create({
     email: req.body.email,
     username: req.body.username,
     password: req.body.password
-  })
+  })).id //signup bug it was asigning the whole user to it 
 
   res.redirect('/')
 })

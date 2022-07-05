@@ -18,6 +18,7 @@ router.post('/new-post'
 ,upload.single('post-image')
 ,requireAuth
 , async (req, res) => {
+  console.log(req.session.userId)
   await postsRepo.create({
     image: req.file.buffer.toString('base64'),
     likesCount: 0,

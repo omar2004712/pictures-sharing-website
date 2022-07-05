@@ -10,5 +10,11 @@
     "username": "example",
     "password": "c2bb8d8f545afd3b24494cc36b6850d5254be90c08439b556720ffd1bef2239d3f12a67942b9e7398d6d5d6cc04428978f3388aa25cfb8c296e3f7d8f1e18094.7e28485f",
     "id": "ce344be7"
+  },
+  {
+    "email": "user@user.com",
+    "username": "user",
+    "password": "3a754f0577f27d3de11c804becb9f6d9966dd019fc8ac61b0675c1570e4dda4a3e1d28dc876edc82459c707645ccf764a9973ebc8dd1dd5156bd84398bd7b0d7.ca973545",
+    "id": "8e86b1ca"
   }
 ]
