@@ -29,18 +29,18 @@ class UsersRepo extends Repo {
   } 
 
   async getOneBy(filters) {
-    const records = await this.getAll();
-    const record = records.find((record) => {
-        let found = true;
-        for(let key in filters){
-            if(!found) return found
-            found = found && (record[key] === filters[key])
-        }
-        return found
-    })
+        const records = await this.getAll();
+        const record = records.find((record) => {
+            let found = true;
+            for(let key in filters){
+                if(!found) return found
+                found = found && (record[key] === filters[key])
+            }
+            return found
+        })
 
-    return record
-  }
+        return record
+    }
 }
 
 module.exports = new UsersRepo('users.json');

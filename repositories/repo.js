@@ -36,6 +36,12 @@ module.exports = class Repo{
     return attrs.id;
   }
 
+  async delete(id) {
+    const records = await this.getAll();
+    const filteredRecordes = records.filter(record => record.id !== id);
+    this.writeAll(filteredRecordes)
+  }
+
   async update (id, attrs) {
     const records = await this.getAll();
     const record = records.find((record => record.id === id));
