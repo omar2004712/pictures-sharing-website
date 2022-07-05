@@ -1,183 +1,21 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <script src="https://kit.fontawesome.com/7ecb8aa263.js" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="main.css" /> -->
-    <style>
-      .root{
-        margin-top: 62px;
-        display: grid;
-        grid-template-rows: 40px 1fr;
-        row-gap: 20px;
-      }
-      .new-post-container{
-        width: fit-content;
-        margin: auto;
-      }
-      .add-new-post{
-        border: 2px solid rgb(187, 187, 187);
-        font-size: 32px;
-        padding: 2px 4px 2px 4px;
-        color: rgb(187, 187, 187);
-        border-radius: 20px;
-        transition: all 200ms;
-      }
-      .add-new-post:hover{
-        color: rgb(117, 117, 117);
-        border: 2px solid rgb(117, 117, 117);
-      }
-      .posts-container{
-        display: flex;
-        flex-direction: column;
-        width: 400px;
-        margin: auto;
-        margin-bottom: 100px;
-      }
-      .post{
-        display: grid;
-        grid-template-rows: 400px 30px 40px 100px;
-        row-gap: 10px;
-      }
-      .grid-3{
-        display: grid;
-        grid-template-rows: 400px 30px 100px;
-        row-gap: 10px;
-      }
-      .post-image{
-        width: 400px;
-        height: 400px;
-        object-fit: cover;
-        border-radius: 8px;
-      }
-      .like-comment-area{
-        display: grid;
-        grid-template-columns: 1fr 100px;
-      }
-      .likes-comments-counters{
-        display: grid;
-        grid-template-columns: 24px 75px 24px 1fr;
-        column-gap: 7px;
-      }
-      .like-button,
-      .comment-button{
-        font-size: 20px;
-        color: white;
-        -webkit-text-stroke:2px black;
-        transform: scaleX(-1);
-        cursor: pointer;
-        transition: color 200ms;
-      }
-      .likes-count,
-      .comments-count{
-        font-size: 16px;
-        vertical-align: middle;
-        font-family: monospace;
-        word-spacing: -5px;
-      }
-      #like-button-checkbox,
-      #comment-button-checkbox{
-        display: none;
-      }
-      .add-new-comment{
-        display: grid;
-        grid-template-columns: 330px 50px;
-        column-gap: 20px;
-      }
-      .new-comment-input{
-        font-size: 16px;
-        font-family: monospace;
-        padding: 8px 8px 4px 8px;
-        width: 100%;
-        outline: none;
-        border: none;
-        border-bottom: 2px rgb(204, 204, 204) solid;
-        transition: all 200ms;
-      }
-      .share-comment-button,
-      .new-comment-button{
-        height: 30px;
-        background-color: black;
-        color: white;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      .share-comment-button{
-        margin-top: 10px;
-      }
-      .new-comment-input:focus{
-        border-bottom: 2px black solid;
-      }
-      .comments-container::-webkit-scrollbar{
-        display: none;
-      }
-      .comments-container{
-        overflow-y: scroll;
-        display: flex;
-        flex-direction: column;
-        background-color: rgb(243, 243, 243);
-      }
-      .comment{
-        font-size: 16px;
-        font-family: monospace;
-        padding: 8px 8px 8px 8px;
-        color: rgb(95, 95, 95);
-        word-wrap: break-word;
-        font-weight: 600;
-        border-bottom: 1px rgb(204, 204, 204) solid;
-      }
-      .hidden{
-        display: none;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="root">
-      <div class="new-post-container">
-        <a href='/new-post' target="_blank">
-          <i class="fa-solid fa-plus add-new-post"></i>
-        </a>
-      </div>
-      <div class="posts-container">
-        <div class="post">
-          <img src="./earth.webp" class="post-image">
-          <div class="like-comment-area">
-            <div class="likes-comments-counters">
-              <form class="like-button-form" method="POST" action="https://localhost:3000/like">
-                <label for="like-button-checkbox">
-                  <input type="submit" id="like-button-checkbox">
-                  <i class="fa-solid fa-heart like-button"></i>
-                </label>
-              </form>
-            <span class="likes-count">100 likes</span>
-              <label for="comment-button-checkbox">
-                <input type="checkbox" id="comment-button-checkbox">
-                <i class="fa-solid fa-comment comment-button"></i>
-              </label>
-              <span class="comments-count">100 comments</span>
-            </div>
-            <button class="new-comment-button">
-              new comment
-            </button>
-          </div>
-          <form class="add-new-comment" method="POST" action="/newComment">
-            <input type="text" placeholder="add new comment" class="new-comment-input" name="comment"/>
-            <button class="share-comment-button">Share</button>
-          </form>
-          <div class="comments-container hidden">
-            <div class="comment">hey nice pic!</div>
-            <div class="comment">hey nice pic!</div>
-            <div class="comment">hey nice pic!</div>
-            <div class="comment">hey nice pic!</div>
-            <div class="comment">hey nice pic!</div>
-            <div class="comment">hey nice pic!</div>
-            <div class="comment">hey nice pic!</div>
-          </div>
+    <html>
+      <head>
+        <link rel="stylesheet" href="./public/main.css" />
+        <title>Pictures - Sign Up</title>
+        <script src="https://kit.fontawesome.com/7ecb8aa263.js" crossorigin="anonymous"></script>
+      </head>
+      <body>
+        <div class="nav-bar">
+          <a href="/">Pictures</a>
         </div>
-      </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-      
-    </script>
-  </body>
-</html>
+        <div>
+          <form method="POST">
+            <input type="text" placeholder="username" name="username" />
+            <input type="text" placeholder="email" name="email" />
+            <input type="password" placeholder="password" name="password">            
+            <input type="password" placeholder="confirm password" name="confirmPassword">            
+          </form>
+        </div>
+      </body>
+    </html>
