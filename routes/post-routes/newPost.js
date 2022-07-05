@@ -2,6 +2,7 @@ const express = require('express');
 const multer = require('multer');
 
 const postsRepo = require('../../repositories/postsRepo');
+const usersRepo = require('../../repositories/usersRepo');
 const newPostTemplate = require('../../views/post/newPostTemplate');
 const { requireAuth } = require('../middlewares');
 
@@ -21,7 +22,8 @@ router.post('/new-post'
     image: req.file.buffer.toString('base64'),
     likesCount: 0,
     commentsCount: 0,
-    comments: []
+    comments: [],
+    publisher: (await usersRepo.getOne(req.session.userId)).username
   })
   res.redirect('/')
 })
