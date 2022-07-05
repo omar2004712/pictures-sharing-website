@@ -252,9 +252,9 @@ body{
   color: black
 }
 
-.sign-in-container{
+.sign-in-container,
+.sign-up-container{
   position: relative;
-  top: 200px;
   width: fit-content;
   margin: auto; 
   display: flex;
@@ -262,14 +262,24 @@ body{
   gap: 10px
 }
 
-.sign-in-container h1{
+.sign-in-container{
+  top: 200px;
+}
+
+.sign-up-container{
+  top: 150px;
+}
+
+.sign-in-container h1,
+.sign-up-container h1{
   font-family: monospace;
   font-size: 36px;
   margin: 0px;
   padding-bottom: 20px;
 }
 
-.sign-in-form{
+.sign-in-form,
+.sign-up-form{
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -277,14 +287,17 @@ body{
 
 .username-email-input,
 .password-input,
-.sign-in-button{
+.sign-in-button,
+.signup-input,
+.sign-up-button{
   font-size: 20px;
   font-family: monospace;
   border-radius: 4px;
 }
 
 .username-email-input,
-.password-input{
+.password-input,
+.signup-input{
   padding: 8px;
   border: none;
   outline: none;
@@ -296,11 +309,13 @@ body{
 }
 
 .username-email-input:focus,
-.password-input:focus{
+.password-input:focus,
+.signup-input:focus{
   box-shadow: 0px 0px 5px black;
 }
 
-.sign-in-button{
+.sign-in-button,
+.sign-up-button{
   background-color: black;
   color: white;
   padding: 8px;
@@ -321,3 +336,4 @@ body{
 .switch-pages a:hover{
   text-decoration: underline;
 }
+
