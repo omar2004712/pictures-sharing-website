@@ -2,7 +2,7 @@ const likeButtonFunctionality = post => {
   const likeButton = post.querySelector('.like-button');
   const likeButtonCheckbox = post.querySelector(`#like-button-checkbox-${post.id}`);
   const likesCount = post.querySelector('.likes-count');
-  likeButton.addEventListener('click', () => {
+  likeButton.addEventListener('click', async () => {
     //check if the checkbox of the like button is checked or not
     if(!likeButtonCheckbox.checked){
       //if not means the checkbox is being checked
@@ -22,12 +22,10 @@ const likeButtonFunctionality = post => {
     likeButton.classList.toggle('black');
     //send an axios request to /like/postid with data of wether the user liked or not
     let url = new URL(`http://localhost:3000/like/${post.id}`)
-    axios({
-      url,
-      method: 'post',
-      data: JSON.stringify({
-        liked: !likeButtonCheckbox.checked,
-      })
-    })
+    await axios.post(url, { liked: !likeButtonCheckbox.checked }
+      ,{
+        'Content-Type': 'application/json'
+      }
+    )
   })
 }

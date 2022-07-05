@@ -45,4 +45,9 @@ handleErrors(signInTemplate)
   res.redirect('/')
 })
 
+router.get('/signout', (req, res) => {
+  delete req.session.userId;
+  res.redirect('/signin')
+})
+
 module.exports = router;

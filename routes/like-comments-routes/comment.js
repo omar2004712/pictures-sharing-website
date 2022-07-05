@@ -3,16 +3,8 @@ const postsRepo = require('../../repositories/postsRepo');
 
 const router = express.Router();
 
-const bodyParser = (req, res, next) => {
-  req.on('data', data => {
-    req.body = {...JSON.parse(data.toString('utf8'))}
-  })
-  req.on('end', () => {
-    next();
-  })
-}
-
-router.post('/newComment/:id', bodyParser,async (req, res) => {
+router.post('/newComment/:id' ,async (req, res) => {
+  console.log(req.body)
   const post = await postsRepo.getOne(req.params.id);
   post.comments.push(req.body.comment);
   post.commentsCount++;
