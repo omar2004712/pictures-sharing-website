@@ -1,9 +1,10 @@
 const express = require('express')
 const postsRepo = require('../../repositories/postsRepo');
+const { requireAuth } = require('../middlewares');
 
 const router = express.Router();
 
-router.post('/newComment/:id' ,async (req, res) => {
+router.post('/newComment/:id', requireAuth, async (req, res) => {
   console.log(req.body)
   const post = await postsRepo.getOne(req.params.id);
   post.comments.push(req.body.comment);
