@@ -8,6 +8,7 @@ const shareNewCommentFunctionality = (post) => {
     event.preventDefault();
     if(!newCommentInput.value){
       //if the input is empty
+      newCommentInput.setAttribute('placeholder', 'Comment is required')      
       return;
     }
     let url = new URL(`http://localhost:3000/newComment/${post.id}`);
@@ -29,5 +30,8 @@ const shareNewCommentFunctionality = (post) => {
     commentsCount.innerText = `${parseInt(commentsCount.innerText.split(' ')[0]) + 1} comments`
 
     newCommentInput.value = '';
+  })
+  newCommentInput.addEventListener('input', () => {
+    newCommentInput.setAttribute('placeholder', 'add a new comment')      
   })  
 }
