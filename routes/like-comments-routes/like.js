@@ -19,6 +19,9 @@ router.post('/like/:id', bodyParser, async  (req, res) => {
   await postsRepo.update(req.params.id, {
     likesCount: req.body.liked ? post.likesCount + 1:post.likesCount - 1
   })
+  res.send({
+    status: 200
+  })
 })
 
 module.exports = router

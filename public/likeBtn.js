@@ -20,7 +20,6 @@ const likeButtonFunctionality = post => {
     }
     likeButton.classList.toggle('white');
     likeButton.classList.toggle('black');
-    console.log('checkbox: ', !likeButtonCheckbox.checked)
     //send an axios request to /like/postid with data of wether the user liked or not
     let url = new URL(`http://localhost:3000/like/${post.id}`)
     axios({

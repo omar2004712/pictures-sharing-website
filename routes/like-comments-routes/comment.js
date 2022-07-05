@@ -20,6 +20,9 @@ router.post('/newComment/:id', bodyParser,async (req, res) => {
     comments: post.comments,
     commentsCount: post.commentsCount
   })
+  res.send({
+    status: 200
+  })
 })
 
 module.exports = router;
