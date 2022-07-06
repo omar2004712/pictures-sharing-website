@@ -3,9 +3,12 @@ const usersRepo = require('../../repositories/usersRepo')
 
 module.exports = async ({ posts }) => {
   let postsTemplate  = '';
-  for(let post of posts){
+  
+  for(let i = (posts.length - 1); i >= 0; i--){
+    let post = posts[i];
     let commentsTemplate = '';
-    for(let comment of post.comments){
+    for(let i = post.comments.length - 1; i >= 0; i--){
+      let comment = post.comments[i];
       commentsTemplate += `<div class="comment">
                             <span class="commenter">@${comment.commenter}:</span>
                             ${comment.comment}
