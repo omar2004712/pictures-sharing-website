@@ -7,10 +7,10 @@ const router = express.Router();
 router.post('/like/:id', requireAuth, async  (req, res) => {
   const post = await postsRepo.getOne(req.params.id);
   if(req.body.liked){
-    post.liked.push(req.session.userId);
+    post.liked[req.session.userId] = "1";
     post.likesCount++;
   } else{
-    post.liked.splice(post.liked.indexOf(req.session.userId), 1);
+    delete post.liked[req.session.userId];
     post.likesCount--
   }
 

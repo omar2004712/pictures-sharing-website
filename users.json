@@ -28,5 +28,11 @@
     "username": "susucat",
     "password": "08327bacfd8eac1e3750544793a7f4529c7c82dd9e60af5eb775ccea70415ab45084a31a51a37f10bd2ca86c445ccffa19d5a6f10abb3ccba655879a774bb8b4.225db0c5",
     "id": "6f433901"
+  },
+  {
+    "email": "newuser@email.com",
+    "username": "new_user",
+    "password": "7aa469ebce2bbc4d13d98d4bc7f3bbc24569c7a77946dbf34eb09f445e238c724c23bce6c6db3e307c0e235813b54021a8fcb7aa4230614afb816476b739aeef.d4450ab3",
+    "id": "be57a323"
   }
 ]
