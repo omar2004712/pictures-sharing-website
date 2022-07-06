@@ -6,7 +6,7 @@ const { requireAuth } = require('./middlewares')
 const router = express.Router();
 
 router.get('/', requireAuth, async (req, res) => {
-  res.send(await homePageTemplate({ posts: await postsRepo.getAll()}))
+  res.send(await homePageTemplate({ posts: await postsRepo.getAll(), req}))
 })
 
 module.exports = router;

@@ -1,11 +1,13 @@
 const layout = require("./layout")
-const usersRepo = require('../../repositories/usersRepo')
+const usersRepo = require('../../repositories/usersRepo');
+const postsRepo = require("../../repositories/postsRepo");
 
-module.exports = async ({ posts }) => {
+module.exports = async ({ posts, req }) => {
   let postsTemplate  = '';
   
   for(let i = (posts.length - 1); i >= 0; i--){
     let post = posts[i];
+    let didUserLike = await postsRepo.didUserLike(req.session.userId, post.id);
     let commentsTemplate = '';
     for(let i = post.comments.length - 1; i >= 0; i--){
       let comment = post.comments[i];
@@ -21,8 +23,8 @@ module.exports = async ({ posts }) => {
             <div class="like-comment-area">
                 <div class="likes-comments-counters">
                   <label for="like-button-checkbox-${post.id}">
-                    <input type="checkbox" id="like-button-checkbox-${post.id}" class="like-button-checkbox">
-                    <i class="fa-solid fa-heart like-button white"></i>
+                    <input type="checkbox" id="like-button-checkbox-${post.id}" class="like-button-checkbox" ${didUserLike ? 'checked':''}>
+                    <i class="fa-solid fa-heart like-button ${didUserLike ? 'black':'white'}"></i>
                   </label>
                   <span class="likes-count">${post.likesCount} likes</span>
                   <label for="comment-button-checkbox">

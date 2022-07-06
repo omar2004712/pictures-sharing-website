@@ -132,6 +132,7 @@ body{
   transition: color 200ms;
   z-index: -100;
 }
+
 .likes-count,
 .comments-count{
   font-size: 16px;
