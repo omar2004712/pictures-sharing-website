@@ -4,7 +4,8 @@ const { check } = require('express-validator');
 const usersRepo = require('../../repositories/usersRepo');
 const signUpTemplate = require('../../views/auth/signUpTemplate');
 const signInTemplate = require('../../views/auth/signInTemplate');
-const { handleErrors, doesEmailUsernameExist } = require('./helpers');
+const { doesEmailUsernameExist } = require('./helpers');
+const { handleErrors } = require('../middlewares');
 const { requireUsername, requireEmail, requirePassword, requireConfirmPassword, requireUsernameEmailAuth, requireCorrectPassword } = require('./validators');
 const { getOneBy } = require('../../repositories/usersRepo');
 

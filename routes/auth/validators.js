@@ -1,17 +1,19 @@
 const { check } = require('express-validator')
 const usersRepo = require('../../repositories/usersRepo');
-const { doesEmailUsernameExist } = require('./helpers');
+const { doesEmailUsernameExist, doesUsernameContainesInvalidChars } = require('./helpers');
 
 
 module.exports = {
   requireUsername: check('username')
   .trim()
+  .toLowerCase()
   .custom( async username => {
     const existingUser = await usersRepo.getOneBy({ username });
     if(existingUser){
       throw new Error('username is used')
     }
-  }),
+  })
+  .custom(doesUsernameContainesInvalidChars),
   requireEmail: check('email')
   .trim()
   .normalizeEmail({

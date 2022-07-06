@@ -2,14 +2,15 @@ const { validationResult } = require('express-validator')
 const usersRepo = require('../../repositories/usersRepo')
 
 module.exports = {
-  handleErrors(templateFunc){
-    return async (req, res, next) => {
-      const errors = validationResult(req);
-      if(! errors.isEmpty()){
-          return res.send(templateFunc({ errors }))
+  doesUsernameContainesInvalidChars(username){
+    for(let char of username){
+      if(!(char >= '0' && char <= '9') 
+      && (char !== '_' && char !== '.') 
+      && !(char >='a' && char <= 'z')){
+        throw new Error(`${char} is invalid character`)
       }
-      next();
     }
+    return true;
   },
   async doesEmailUsernameExist(usernameEmail){
     let existingUser = await usersRepo.getOneBy({ username: usernameEmail});
