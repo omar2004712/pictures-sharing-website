@@ -54,8 +54,8 @@ module.exports = {
   .trim()
   .custom(async (suppliedPassword, { req }) => {
     try{
-      const existingUser = await doesEmailUsernameExist(req.body['username-email'], {}, 2);
-      if(!usersRepo.comparePasswords( existingUser.password, suppliedPassword)){
+      const existingUser = await doesEmailUsernameExist(req.body['username-email']);
+      if(!await usersRepo.comparePasswords( existingUser.password, suppliedPassword)){
         throw new Error('Incorrect password');
       }
 
