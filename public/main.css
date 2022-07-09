@@ -1,3 +1,7 @@
+:root{
+  --like-color: rgb(233, 21, 21);
+}
+
 body{
   margin: 0px;
 }
@@ -123,6 +127,7 @@ body{
   color: black;
   z-index: -100;
 }
+
 .like-button,
 .comment-button{
   font-size: 20px;
@@ -132,6 +137,27 @@ body{
   transition: color 200ms;
   z-index: -100;
   display: inline;
+  transition: all 100ms;
+}
+
+.red{
+  color: var(--like-color);
+  -webkit-text-stroke:2px var(--like-color);
+  z-index: -100;
+}
+
+.resize{
+  transform: scale(0, 0);
+}
+
+@keyframes resize {
+  0%{
+    transform: scale(1, 1);
+  } 50%{
+    transform: scale(0, 0);
+  } 100%{
+    transform: scale(1, 1);
+  }
 }
 
 .likes-count,
@@ -168,6 +194,7 @@ body{
   height: 30px;
   background-color: black;
   color: white;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -185,7 +212,7 @@ body{
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
-  background-color: rgb(243, 243, 243);
+  background-color: rgb(231, 231, 231);
 }
 .comment{
   font-size: 16px;
@@ -202,8 +229,8 @@ body{
 
 .new-post-container{
   margin-top: 62px;
-  display: grid;
-  grid-template-rows: 80px 45px;
+  display: flex;
+  flex-direction: column;
   position: relative;
   top: 200px;
   background-color: black;
@@ -216,6 +243,18 @@ body{
 
 #post-image{
   display: none;
+}
+
+.img-error{
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: red;
+}
+
+.custom-input{
+  height: 80px;
 }
 
 .upload-text{
@@ -237,6 +276,7 @@ body{
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  height: 45px;
 }
 
 .post-button:hover{
@@ -254,7 +294,8 @@ body{
 }
 
 .commenter{
-  color: black
+  color: black;
+  font-weight: 600;
 }
 
 .sign-in-container,
@@ -375,4 +416,78 @@ body{
   font-size: 20px;
   top: -1px;
   left: 2px;
+}
+
+@media screen and (max-width: 500px) and (max-height: 800px){
+  .posts-container{
+    row-gap: 20px;
+  }
+  .grid-2{
+    grid-template-rows: 28px 450px 36px;
+    row-gap: 8px;
+  }
+  .grid-3{
+    grid-template-rows: 28px 450px 36px fit-content;
+    row-gap: 8px;
+  }
+  .grid-3-new-comment{
+    grid-template-rows: 28px 450px 36px 36px;
+    row-gap: 8px;
+  }
+  .post{
+    grid-template-rows: 28px 450px 36px 36px fit-content;
+    row-gap: 8px;
+  }
+  .post-image{
+    width: 450px;
+    height: 450px;
+  }
+  .posts-container{
+    width: 450px;
+  }
+  .like-comment-area{
+    grid-template-columns: 1fr 150px;
+    padding: 0px 4px 0px 4px;
+  }
+  .likes-comments-counters{
+    grid-template-columns: 28px auto 28px auto 1fr;
+    column-gap: 8px;
+  }
+  .like-button,
+  .comment-button{
+    font-size: 28px;
+  }
+  .likes-count,
+  .comments-count{
+    font-size: 24px;
+  }
+  .download-button{
+    font-size: 28px;
+    top: 0px;
+  }
+  .download-button:active{
+    font-size: 24px;
+    top: 2px;
+    left: 2px;
+  }
+  .new-comment-input{
+    font-size: 20px;
+  }
+  .share-comment-button,
+  .new-comment-button{
+    font-size: 18px;
+    height: 36px;
+  }
+  .add-new-comment{
+    grid-template-columns: 330px 100px;
+  }
+  .publisher-username{
+    font-size: 24px;
+  }
+  .delete-button{
+    font-size: 28px;
+  }
+  .comment{
+    font-size: 20px;
+  }
 }

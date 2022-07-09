@@ -28,7 +28,7 @@ module.exports = async ({ posts, req }) => {
                 <div class="likes-comments-counters">
                   <label for="like-button-checkbox-${post.id}">
                     <input type="checkbox" id="like-button-checkbox-${post.id}" class="like-button-checkbox" ${didUserLike ? 'checked':''}>
-                    <i class="fa-solid fa-heart like-button ${didUserLike ? 'black':'white'}"></i>
+                    <i class="fa-solid fa-heart like-button ${didUserLike ? 'red':'white'}"></i>
                   </label>
                   <span class="likes-count">${post.likesCount}</span>
                   <label for="comment-button-checkbox">
