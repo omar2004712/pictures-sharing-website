@@ -36,7 +36,11 @@ module.exports = async ({ posts, req }) => {
                     <i class="fa-solid fa-comment comment-button white"></i>
                   </label>
                   <span class="comments-count">${post.commentsCount}</span>
-                  <a href="data:image/png;base64, ${post.image}" download="${post.image}" class="download-button"><i class="fa-solid fa-circle-arrow-down"></i></a>
+                  <span>
+                    <a href="data:image/png;base64, ${post.image}" download="${post.image}" class="download-button">
+                      <i class="fa-solid fa-circle-arrow-down"></i>
+                    </a>
+                  </span>
                 </div>
                 <button class="new-comment-button">
                   new comment

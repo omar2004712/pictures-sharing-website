@@ -27,7 +27,7 @@ const shareNewCommentFunctionality = (post) => {
     newComment.innerText = newCommentInput.value;
     newComment.prepend(commenterEl)
     commentsContainer.prepend(newComment);
-    commentsCount.innerText = `${parseInt(commentsCount.innerText.split(' ')[0]) + 1} comments`
+    commentsCount.innerText = `${parseInt(commentsCount.innerText.split(' ')[0]) + 1}`
 
     newCommentInput.value = '';
   })
