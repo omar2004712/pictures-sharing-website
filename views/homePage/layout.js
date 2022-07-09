@@ -17,6 +17,7 @@ module.exports = ({content, title}) => {
           </div>
         </div>
         ${content}
+        <script src="navbar.js"></script>
       </body>
     </html>
   `

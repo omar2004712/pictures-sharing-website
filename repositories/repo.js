@@ -49,7 +49,7 @@ module.exports = class Repo{
         throw new Error(`record with id ${id} not found!`);
     }
     Object.assign(record, attrs)
-    this.writeAll(records)
+    await this.writeAll(records)
   }
 
   async getOne(id) {

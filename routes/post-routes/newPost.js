@@ -24,7 +24,8 @@ router.post('/new-post'
     likesCount: 0,
     commentsCount: 0,
     comments: [],
-    publisher: (await usersRepo.getOne(req.session.userId)).username
+    publisher: (await usersRepo.getOne(req.session.userId)).username,
+    liked: {}
   })
   res.redirect('/')
 })

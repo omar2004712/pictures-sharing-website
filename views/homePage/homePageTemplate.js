@@ -67,6 +67,7 @@ module.exports = async ({ posts, req }) => {
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="helpers.js"></script>
     <script src="shareNewComment.js"></script>
+    <script src="deleteButton.js"></script>
     <script src="addNewComment.js"></script>
     <script src="commentsSection.js"></script>
     <script src="likeBtn.js"></script>

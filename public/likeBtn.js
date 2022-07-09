@@ -34,6 +34,5 @@ const likeButtonFunctionality = post => {
   const likeButton = post.querySelector('.like-button')
   const likeButtonCheckbox = post.querySelector(`#like-button-checkbox-${post.id}`);
   const likesCount = post.querySelector('.likes-count');
-  //used debounceHelper to prevent multiple request at the same time and reduce the stress on the server
   likeButton.addEventListener('click', likeButtonEventListenerCallback)
 }

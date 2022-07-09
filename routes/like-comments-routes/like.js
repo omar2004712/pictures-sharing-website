@@ -18,6 +18,7 @@ router.post('/like/:id', requireAuth, async  (req, res) => {
     likesCount: post.likesCount,
     liked: post.liked
   })
+
   res.send({
     status: 200
   })
