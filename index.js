@@ -12,6 +12,7 @@ const likeRouter = require('./routes/like-comments-routes/like');
 const commentRouter = require('./routes/like-comments-routes/comment');
 const newPostRouter = require('./routes/post-routes/newPost')
 const authRouter = require('./routes/auth/sign');
+const deletePostRouter = require('./routes/post-routes/deletePost')
 const usersRepo = require('./repositories/usersRepo');
 
 const app = express();
@@ -30,6 +31,7 @@ app.use(likeRouter);
 app.use(commentRouter)
 app.use(newPostRouter)
 app.use(authRouter)
+app.use(deletePostRouter)
 
 app.listen( 3000, () => {
   console.log('Listening')

@@ -6,14 +6,14 @@ const likeButtonEventListenerCallback = async function (){
     //if not means the checkbox is being checked
     //increment the likes count
     let value = parseInt(likesCount.innerText.split(' ')[0]) + 1;
-    likesCount.innerText = `${value} likes`;
+    likesCount.innerText = `${value}`;
     //change the color of the like button to black
   }
   else{
     //else means the checkbox is being unchecked
     //decrement the likes count
     let value = parseInt(likesCount.innerText.split(' ')[0]) - 1;
-    likesCount.innerText = `${value} likes`;
+    likesCount.innerText = `${value}`;
     //change the color of the like button to white
   }
   this.classList.toggle('white');

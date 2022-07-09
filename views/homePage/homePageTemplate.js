@@ -8,6 +8,7 @@ module.exports = async ({ posts, req }) => {
   for(let i = (posts.length - 1); i >= 0; i--){
     let post = posts[i];
     let didUserLike = await postsRepo.didUserLike(req.session.userId, post.id);
+    let isItUserPost = await postsRepo.isItUserPost(req.session.userId, post.id);
     let commentsTemplate = '';
     for(let i = post.comments.length - 1; i >= 0; i--){
       let comment = post.comments[i];
@@ -18,7 +19,10 @@ module.exports = async ({ posts, req }) => {
     }
     postsTemplate += `
             <div class="grid-2 Post" id="${post.id}">
-            <div class="publisher-username">@${post.publisher}</div>
+              <div class="post-head">
+                <div class="publisher-username">@${post.publisher}</div>
+                ${isItUserPost ? '<i class="fa-solid fa-trash-can delete-button"></i>': ''}
+              </div>
             <img src="data:image/png;base64, ${post.image}" class="post-image"/>        
             <div class="like-comment-area">
                 <div class="likes-comments-counters">
@@ -26,12 +30,13 @@ module.exports = async ({ posts, req }) => {
                     <input type="checkbox" id="like-button-checkbox-${post.id}" class="like-button-checkbox" ${didUserLike ? 'checked':''}>
                     <i class="fa-solid fa-heart like-button ${didUserLike ? 'black':'white'}"></i>
                   </label>
-                  <span class="likes-count">${post.likesCount} likes</span>
+                  <span class="likes-count">${post.likesCount}</span>
                   <label for="comment-button-checkbox">
                     <input type="checkbox" id="comment-button-checkbox">
                     <i class="fa-solid fa-comment comment-button white"></i>
                   </label>
-                  <span class="comments-count">${post.commentsCount} comments</span>
+                  <span class="comments-count">${post.commentsCount}</span>
+                  <a href="data:image/png;base64, ${post.image}" download="${post.image}" class="download-button"><i class="fa-solid fa-circle-arrow-down"></i></a>
                 </div>
                 <button class="new-comment-button">
                   new comment
