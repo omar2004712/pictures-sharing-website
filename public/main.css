@@ -2,6 +2,10 @@
   --like-color: rgb(233, 21, 21);
 }
 
+button{
+  border: none;
+}
+
 body{
   margin: 0px;
 }
